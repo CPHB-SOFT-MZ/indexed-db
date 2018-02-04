@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IndexedDbImpl implements IndexedDb {
+public class BinaryHashIndexedDb implements IndexedDb {
 
     private final String MAP_NAME = "mapfile";
     private RandomAccessFile db;
@@ -14,12 +14,12 @@ public class IndexedDbImpl implements IndexedDb {
     private File mapFile;
     private File dbFile;
 
-    public IndexedDbImpl(String dbName) {
+    public BinaryHashIndexedDb(String dbName) {
         this.dbFile = new File(dbName);
         this.mapFile = new File(MAP_NAME);
     }
 
-    public IndexedDbImpl(String dbName, String mapName) {
+    public BinaryHashIndexedDb(String dbName, String mapName) {
         this.dbFile = new File(dbName);
         this.mapFile = new File(mapName);
     }
@@ -49,6 +49,12 @@ public class IndexedDbImpl implements IndexedDb {
         // THIS IS NOT A GOOD IDEA as you can't move the DB from one system to another
         db.writeBytes(byteData.toString());
         db.writeBytes(System.getProperty("line.separator"));
+    }
+
+    @Override
+    public void writeAndPersist(String key, String value) throws IOException {
+        write(key, value);
+        saveHashMap();
     }
 
     @Override
@@ -83,6 +89,14 @@ public class IndexedDbImpl implements IndexedDb {
 
         objectOutputStream.close();
         fileOutputStream.close();
+    }
+
+    /**
+     * Actually just calls the shutdown method as there's no difference as of now
+     * @throws IOException
+     */
+    private void saveHashMap() throws IOException {
+        shutdown();
     }
 
     /**

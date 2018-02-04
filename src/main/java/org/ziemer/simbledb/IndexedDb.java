@@ -24,6 +24,14 @@ public interface IndexedDb {
     void write(String key, String value) throws IOException;
 
     /**
+     * Does the same as write, except it also persists the map file
+     * @param key
+     * @param value
+     * @throws IOException
+     */
+    void writeAndPersist(String key, String value) throws IOException;
+
+    /**
      * Read a value from the file based on the index stored in the map
      * @param key
      * @return

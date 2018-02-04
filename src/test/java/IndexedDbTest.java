@@ -1,6 +1,6 @@
 import org.junit.*;
 import org.ziemer.simbledb.IndexedDb;
-import org.ziemer.simbledb.IndexedDbImpl;
+import org.ziemer.simbledb.BinaryHashIndexedDb;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,7 +17,7 @@ public class IndexedDbTest {
     public void setup() throws IOException, ClassNotFoundException {
         this.fileName = UUID.randomUUID().toString();
         this.mapName = UUID.randomUUID().toString();
-        this.indexedDb = new IndexedDbImpl(this.fileName);
+        this.indexedDb = new BinaryHashIndexedDb(this.fileName);
         this.indexedDb.run();
     }
 
