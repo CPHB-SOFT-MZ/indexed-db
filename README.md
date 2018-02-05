@@ -10,7 +10,7 @@ The only thing it loads when starting up is the hashmap, which is why this DB ha
 
 ## Getting started
 1. Clone this project
-2. From the commandline `cd` into the project folder and run `mvn install`
+2. From the commandline `cd` into the project folder and run `mvn clean install`
 3. Create a new Maven project, either from a template or just a basic empty one
 4. In your pom.xml file, copy and paste in this snippet in your `dependencies` tag:
 
