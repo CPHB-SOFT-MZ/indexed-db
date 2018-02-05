@@ -33,7 +33,7 @@ public class BinaryHashIndexedDb implements IndexedDb {
 
     @Override
     public void write(String key, String value) throws IOException {
-        String data = key.toString() + "," + value.toString();
+        String data = key + "," + value;
         byte[] byteArray = data.getBytes(StandardCharsets.UTF_8);
 
         // Save the place we are going to save our data, in our HashMap

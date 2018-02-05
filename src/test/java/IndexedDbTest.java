@@ -42,5 +42,6 @@ public class IndexedDbTest {
 
         this.indexedDb.write("2", "99");
         Assert.assertEquals("99", this.indexedDb.read("2"));
+
     }
 }
