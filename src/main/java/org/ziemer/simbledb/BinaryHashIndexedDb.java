@@ -63,7 +63,7 @@ public class BinaryHashIndexedDb implements IndexedDb {
         db.seek(map.get(key));
         String dataLine = db.readLine();
 
-        // Replace key with nothing
+        // Read binary values
         String[] lines = dataLine.split("\\s+");
 
         // Convert the binary string to a human readable value
