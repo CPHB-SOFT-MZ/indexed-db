@@ -16,7 +16,7 @@ The only thing it loads when starting up is the hashmap, which is why this DB ha
 
 ```
 <dependency>
-    <groupId>org.ziemer.simpledb</groupId>
+    <groupId>org.ziemer.db</groupId>
     <artifactId>indexed-db</artifactId>
     <version>0.1-SNAPSHOT</version>
 </dependency>
