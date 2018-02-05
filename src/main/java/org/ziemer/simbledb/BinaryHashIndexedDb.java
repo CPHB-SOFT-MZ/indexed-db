@@ -108,7 +108,7 @@ public class BinaryHashIndexedDb implements IndexedDb {
         if (mapFile.exists()) {
             HashMap<String, Long> hashmap = new HashMap<>();
 
-            for (Long i = Long.valueOf(0); i < db.length(); i = db.getFilePointer()) {
+            for (Long i = 0L; i < db.length(); i = db.getFilePointer()) {
                 Long pointer = db.getFilePointer();
                 // Save the key and the pointer to the hashmap
                 hashmap.put(db.readLine().split(",")[0], pointer);
