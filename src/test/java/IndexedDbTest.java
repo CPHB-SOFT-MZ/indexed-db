@@ -1,6 +1,6 @@
 import org.junit.*;
-import org.ziemer.simbledb.IndexedDb;
-import org.ziemer.simbledb.BinaryHashIndexedDb;
+import org.ziemer.db.indexed.IndexedDb;
+import org.ziemer.db.indexed.BinaryHashIndexedDb;
 
 import java.io.IOException;
 import java.nio.file.Files;

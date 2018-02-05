@@ -1,4 +1,4 @@
-package org.ziemer.simbledb;
+package org.ziemer.db.indexed;
 
 import java.io.IOException;
 
