@@ -14,7 +14,7 @@ The only thing it loads when starting up is the hashmap, which is why this DB ha
 3. Create a new Maven project, either from a template or just a basic empty one
 4. In your pom.xml file, copy and paste in this snippet in your `dependencies` tag:
 
-```
+```xml
 <dependency>
     <groupId>org.ziemer.db</groupId>
     <artifactId>indexed-db</artifactId>
@@ -29,7 +29,7 @@ The project exposes a single interface called `IndexedDb` and have a single impl
 
 Example of usage: 
 
-```
+```java
 public class Example {
   private IndexedDb indexedDb;
   
