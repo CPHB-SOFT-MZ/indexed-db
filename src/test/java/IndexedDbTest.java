@@ -23,6 +23,7 @@ public class IndexedDbTest {
 
     @After
     public void destroy() throws IOException {
+        indexedDb.shutdown();
         Files.deleteIfExists(Paths.get(this.fileName));
         Files.deleteIfExists(Paths.get(this.mapName));
     }

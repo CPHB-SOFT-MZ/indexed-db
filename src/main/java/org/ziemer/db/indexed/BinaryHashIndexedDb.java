@@ -89,6 +89,7 @@ public class BinaryHashIndexedDb implements IndexedDb {
 
         objectOutputStream.close();
         fileOutputStream.close();
+        this.db.close();
     }
 
     /**
