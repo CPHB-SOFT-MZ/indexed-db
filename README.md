@@ -11,6 +11,10 @@ The only thing it loads when starting up is the hashmap, which is why this DB ha
 ## Getting started
 1. Clone this project
 2. From the commandline `cd` into the project folder and run `mvn clean install`
+    2. If you're having trouble with installing the project you can run:<br/>
+    `docker run -it --rm --name indexed-db -v "$(PWD)":/indexed-db -v "$HOME/.m2":/root/.m2 -w /indexed-db maven:3.5-jdk-8 mvn clean install`<br/>
+    from the project folder. This command is expecting your .m2 directory to be directly in your HOME directory
+    
 3. Create a new Maven project, either from a template or just a basic empty one
 4. In your pom.xml file, copy and paste in this snippet in your `dependencies` tag:
 
